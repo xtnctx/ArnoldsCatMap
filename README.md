@@ -1,6 +1,4 @@
 # ArnoldsCatMap
-##### Simulation of chaotic image encryption, returning to its original state after a number of steps.
-
 
 Consider taking a square image, consisting of N-by-N pixels, where the coordinate of each pixel is represented by the ordered pair (X, Y). 
  
@@ -8,7 +6,9 @@ Arnold’s cat map induces a discrete-time dynamical system in which the evoluti
 ```
 Γ𝑐𝑎𝑡(𝑥,𝑦)→(2𝑥+𝑦, 𝑥+𝑦) 𝑚𝑜𝑑 1 where Γ𝑐𝑎𝑡 ([𝑋𝑛+1 𝑌𝑛+1])=[1 11 2][𝑋𝑛 𝑌𝑛](𝑚𝑜𝑑 1) 
 ```
+
 ## Connection between Arnold’s cat and Fibonacci’s rule 
+
 Let the nth number of the Fibonacci sequence be defined by the recurrence relation 𝐹𝑛 = 𝐹𝑛−1 + 𝐹𝑛−2 with 𝐹0 =0, 𝐹1 =1. 
 We can get the f irst Fibonacci numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ... 
  
@@ -29,7 +29,7 @@ with a pattern of:
 
 As a result, we can see the 3rd Pisano period is 8.  
  
- 
+
 ## Python implementation 
 At first, we want to load the image and get its width and height 
 ```
@@ -54,7 +54,7 @@ def resize_img(self, img) -> Image:
     return resized_im 
  ```
  
- 
+
 This simply explains to resize the image to the desired size if the image exceeds the value of the image placeholder’s otherwise, resize the image to its minimum  size of (width, height) to make a square image. 
  
 Now to make the chaotic map, we can create a  new canvas and take the image we have as reference.  
