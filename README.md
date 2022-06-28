@@ -112,7 +112,7 @@ def images_the_same(image1, image2):
 
 As we recall the imageBoxSize  is sets to 200 because the higher size of the image will result in  longer process of doing the  map.  Overall, the time  complexity  represented in Big O notation of this program is 𝑂(𝑛2)+𝑚 where 𝑛 represents the width and height of the image and 𝑚 is the iteration until the original image reappears.
 
-
-![catsim](https://user-images.githubusercontent.com/67821138/176149793-64a473ea-e9fc-48ba-bf43-9d1dde411128.gif)
-
+<div align="center">
+ <img src="https://user-images.githubusercontent.com/67821138/176149793-64a473ea-e9fc-48ba-bf43-9d1dde411128.gif" alt="simulation">
+<div/>
 
