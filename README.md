@@ -1,5 +1,5 @@
 # ArnoldsCatMap
-Simulation of chaotic image encryption, returning to its original state after a number of steps.
+### Simulation of chaotic image encryption, returning to its original state after a number of steps.
 
 
 Consider taking a square image, consisting of N-by-N pixels, where the coordinate of each pixel is represented by the ordered pair (X, Y). 
