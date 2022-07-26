@@ -16,7 +16,7 @@ Hence, the matrix representation of 𝐹=[0 1 1 1]=[𝐹0 𝐹1 𝐹1 𝐹2] wil
  
 Let’s say we iterate twice 𝐹2, then 𝐹 =[0 1 1 1][0 1 1 1]=[1 1 1 2] which is also equal to the largest eigenvalue of 𝐹. 
 
-In 1774, Lagrange discovered repeating patterns in the Fibonacci sequence 𝑚𝑜𝑑 𝑁. The 𝑁𝑡ℎ  Pisano  period, written 𝜋(𝑁),  is  the number of times  the Fibonacci sequence, modulo 𝑁, repeats.  
+Back in 1774, Lagrange discovered repeating patterns in the Fibonacci sequence 𝑚𝑜𝑑 𝑁. The 𝑁𝑡ℎ  Pisano  period, written 𝜋(𝑁),  is  the number of times  the Fibonacci sequence, modulo 𝑁, repeats.  
 
 For example, if we take the first 15 Fibonacci numbers 𝐹15 with 𝐹0 =0, 𝐹1 =1, we will get 0,1,1,2,3,5,8,13,21,34,55,89,144,233,377
 Then  we  take  the  remainder  using the  modular  arithmetic  of each  number  𝑘  in  the sequence by dividing it to the 𝑁. 
