@@ -83,7 +83,7 @@ while not done:
  
  
  
-This is  done by iterating infinitely until we get the same  image.  This is  done using the OpenCV module in python. 
+This is done by iterating infinitely until we get the same image with the help of OpenCV module in python. 
  
  
 ```
