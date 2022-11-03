@@ -3,9 +3,10 @@
 Consider taking a square image, consisting of N-by-N pixels, where the coordinate of each pixel is represented by the ordered pair (X, Y). 
  
 Arnold’s cat map induces a discrete-time dynamical system in which the evolution is given by iterations of the mapping Γ𝑐𝑎𝑡 ∶ 𝕋2 → 𝕋2 given the formula
-```
-Γ𝑐𝑎𝑡(𝑥,𝑦)→(2𝑥+𝑦, 𝑥+𝑦) 𝑚𝑜𝑑 1 where Γ𝑐𝑎𝑡 ([𝑋𝑛+1 𝑌𝑛+1])=[1 11 2][𝑋𝑛 𝑌𝑛](𝑚𝑜𝑑 1) 
-```
+
+$Γ𝑐𝑎𝑡(𝑥,𝑦)→(2𝑥+𝑦, 𝑥+𝑦) &ensp; 𝑚𝑜𝑑 &ensp; 1$ where
+
+$$Γ𝑐𝑎𝑡{\bigg(\left\lbrack \matrix{𝑋𝑛+1 \cr 𝑌𝑛+1} \right\rbrack\bigg)} = \left\lbrack \matrix{1 & 1 \cr 1 & 2} \right\rbrack {\left\lbrack \matrix{𝑋𝑛 \cr 𝑌𝑛} \right\rbrack} (mod &ensp; 1)$$
 
 ## Connection between Arnold’s cat and Fibonacci’s rule 
 
@@ -32,7 +33,7 @@ As a result, we can see the 3rd Pisano period is 8.
 
 ## Python implementation 
 At first, we want to load the image and get its width and height 
-```
+```python
 img = Image.open(input_img) 
 width, height = img.width, img.height 
 ```
@@ -40,7 +41,7 @@ width, height = img.width, img.height
 In this program, user may  only take a square size of the image. If the condition does not meet this requirement, we can create a function that resizes it to square. 
  
  
- ```
+ ```python
 def resize_img(self, img) -> Image: 
     min_size = min(img.size) 
     imageBoxSize = 200 # maximum width of image placeholder 
@@ -63,16 +64,16 @@ canvas = Image.new(img.mode, (img.width, img.height))
 Given by the formula for Arnold’s Cat Map, we can draw and apply the rule on each pixel of the image in the 𝑥 and  𝑦  coordinates of the canvas  and setting the 𝑁 equal to the width or height of the image. Thus, 
 
  
-```
+```python
 done = False 
 while not done: 
     for x in range(canvas.width): 
         for y in range(canvas.height): 
             nx = (2 * x + y) % canvas.width 
             ny = (x + y) % canvas.height 
-      canvas.putpixel((nx,canvas.height-ny-1), 
-                      img.getpixel((x, canvas.height-y-1))) 
-    self.iteration += 1 
+            canvas.putpixel((nx,canvas.height-ny-1),img.getpixel((x, canvas.height-y-1))) 
+    self.iteration += 1
+    
     new_image = self.images_path + f'ACM-{namex}-{self.iteration}.png' 
     canvas.save(new_image) 
     img = Image.open(new_image) 
@@ -86,7 +87,7 @@ while not done:
 This is done by iterating infinitely until we get the same image with the help of OpenCV module in python. 
  
  
-```
+```python
 import cv2 
 def images_the_same(image1, image2): 
     """ 
@@ -103,8 +104,7 @@ def images_the_same(image1, image2):
     difference = cv2.subtract(im1, im2) 
     b, g, r = cv2.split(difference) 
  
-    if (cv2.countNonZero(b) == 0 and cv2.countNonZero(g) == 0 and  
-        cv2.countNonZero(r) == 0): 
+    if (cv2.countNonZero(b) == 0 and cv2.countNonZero(g) == 0 and cv2.countNonZero(r) == 0): 
         return True 
     return False 
 ```
