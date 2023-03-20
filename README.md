@@ -59,7 +59,7 @@ def resize_img(self, img) -> Image:
 This simply explains to resize the image to the desired size if the image exceeds the value of the image placeholder’s otherwise, resize the image to its minimum  size of (width, height) to make a square image. 
  
 Now to make the chaotic map, we can create a  new canvas and take the image we have as reference.  
-canvas = Image.new(img.mode, (img.width, img.height)) 
+`canvas = Image.new(img.mode, (img.width, img.height))`
  
 Given by the formula for Arnold’s Cat Map, we can draw and apply the rule on each pixel of the image in the 𝑥 and  𝑦  coordinates of the canvas  and setting the 𝑁 equal to the width or height of the image. Thus, 
 
